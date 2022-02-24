@@ -4,19 +4,21 @@ import Label from '../atoms/labels/Label';
 
 type Props = {
   name: string,
+  result: string,
   text: string,
   width: number,
   height: number,
   fontSize: number,
-  color: string
+  color: string,
+  //onPress: () => {}
 }
 
 export const Button = (props: Props) => {
 
-  const { name, text, width, height, fontSize, color } = props
+  const { name, result, text, width, height, fontSize, color } = props
 
   function onButtonPress() {
-    console.warn(`Hi ${name}, you are approved!`);
+    console.warn(`Hi ${name}, you are ${result}.`);
   }
 
   return (
@@ -29,25 +31,26 @@ export const Button = (props: Props) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    borderRadius: 10,
-    borderWidth: 4,
-    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 35,
+    borderWidth: 3,
+    backgroundColor: '#F3F4F7',
+    margin: 10,
     ...Platform.select({
       android: {
-        elevation: 20,
-        shadowColor: '#52006A',
+        elevation: 15,
+        shadowColor: '#000000',
       },
       ios: {
-        shadowColor: '#171717',
+        shadowColor: '#071717',
         shadowOffset: { width: -2, height: 4 },
-        shadowOpacity: 0.2,
+        shadowOpacity: 0.5,
         shadowRadius: 3,
       }
     })
   },
   label: {
-    justifyContent: 'center',
-    alignSelf: 'center',
     fontWeight: 'bold'
   },
 });
