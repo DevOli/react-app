@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types'
 
 type Props = {
@@ -8,9 +8,12 @@ type Props = {
 }
 
 export default function Label(props: Props) {
-    return <Text style={props.textStyle}>{props.text}</Text>
+    return <Text style={{...styles.simpleText, ...props.textStyle}}>{props.text}</Text>
 }
 
-Label.propTypes = {
-    text: PropTypes.string.isRequired
-}
+const styles = StyleSheet.create({
+    simpleText: {
+        margin: 6
+    },
+});
+

@@ -3,28 +3,33 @@ import { Pressable, StyleSheet} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 
-type Style = {
+type Props = {
   size: number,
-  color: string
+  color: string,
+  disabled?: boolean,
+  checked: boolean,
+  onChange: () => void,
 }
 
-export default function Checkbox({size, color}: Style) {
-  const [checked, onChange] = useState(false);
+export default function Checkbox(props: Props) {
+  const {size, color, disabled, onChange, checked} = props;
+  //const [checked, onChange] = useState(false);
 
-  function onCheckmarkPress() {
-    onChange(!checked);
-  }
+  // function onCheckmarkPress() {
+  //   onChange(!checked);
+  // }
 
   const customStyles = {
     width: size,
     height: size,
-    borderColor: color
+    borderColor: disabled ? 'darkgrey': color
   }
 
   return (
     <Pressable
+      disabled={disabled}
       style={[styles.checkboxBase, customStyles, checked && {backgroundColor: color}]}
-      onPress={onCheckmarkPress}>
+      onPress={onChange}>
       {checked && <FontAwesome name='check' size={size-5} color='white' />}
     </Pressable>
   );
