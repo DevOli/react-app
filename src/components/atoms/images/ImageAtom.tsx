@@ -2,13 +2,14 @@ import { View, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
 type ImageProps = {
-  image: number
+  image: number,
+  imageStyle: object
 }
 
 export default function ImageAtom(props: ImageProps) {
   return (
     <View>
-      <Image source={props.image} style={styles.imageAtom}/>
+      <Image source={props.image} style={[styles.imageAtom, props.imageStyle]}/>
     </View>
   )
 }
@@ -18,7 +19,5 @@ const styles = StyleSheet.create({
       height: 200,
       width: "100%",
       resizeMode: 'cover',
-      borderTopLeftRadius: 8,
-      borderTopRightRadius: 8
     }
   });

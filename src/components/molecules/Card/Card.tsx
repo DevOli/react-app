@@ -8,19 +8,19 @@ export default function Card(props: any) {
   return (
     <View style={styles.container}>
       <View style={styles.image}>
-        <ImageAtom image={require("../../../../assets/react-logo.png")} />
+        <ImageAtom image={require("../../../../assets/react-logo.png")} imageStyle={{ height: 220, borderTopLeftRadius: 8, borderTopRightRadius: 8 }}/>
       </View>
       <View style={styles.cardBody}>
         <View style={styles.title}>
-          <Label textStyle={{fontSize: 24, color: "black", fontWeight: "bold"}} text="Hello world"/>
-          <Label textStyle={{fontSize: 20, color: "black"}} text="Secondary text"/>
+          <Label textStyle={{fontSize: 20, color: "black", fontWeight: "bold", margin: 0}} text="Hello world"/>
+          <Label textStyle={{fontSize: 16, color: "black", margin: 0}} text="Secondary text"/>
         </View>
         <View style={styles.description}>
-          <Label textStyle={{fontSize: 20, color: "black"}} text="Greyhound divisively hello coldly wonderfully marginally far upon excluding."/>
+          <Label textStyle={{fontSize: 16, color: "black", margin: 0}} text="Greyhound divisively hello coldly wonderfully marginally far upon excluding."/>
         </View>
         <View style={styles.buttons}>
-          <Button text='ACTION 1' width={100} height={40} />
-          <Button text='ACTION 2' width={100} height={40} />
+          <Button text='ACTION 1' width={120} height={40} />
+          <Button text='ACTION 2' width={120} height={40} />
         </View>
       </View>
     </View>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     }
   }),
   image: {
-    height: 200,
+    height: 220,
   },
   cardBody: {
     backgroundColor: "#fff",
