@@ -23,7 +23,7 @@ export const Button = (props: Props) => {
 
   return (
     <TouchableHighlight style={[styles.container, { borderColor: color, width: width, height: height }]} onPress={onButtonPress}>
-      <Label text={text} textStyle={[styles.label, { fontSize: fontSize, color: color }]} />
+      <Label text={text.toUpperCase()} textStyle={[styles.label, { fontSize: fontSize, color: color }]} />
     </TouchableHighlight>
   )
 }
@@ -33,10 +33,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 35,
+    borderRadius: 8,
     borderWidth: 3,
     backgroundColor: '#F3F4F7',
     margin: 10,
+    paddingStart: 16,
+    paddingEnd: 16,
     ...Platform.select({
       android: {
         elevation: 15,
