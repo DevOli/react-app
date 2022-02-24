@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 
 interface Props {
   placeholder: string;
-  onChangeText: ()=>void;
+  onChangeText: (text: string) => void;
 }
 
 const Input: FC<Props> = (props) => {
@@ -12,9 +12,9 @@ const Input: FC<Props> = (props) => {
       <TextInput
         textAlign='left'
         placeholder={props.placeholder}
-        style={styles.input} 
-        onChangeText={props.onChangeText} >
-        </TextInput>
+        style={styles.input}
+        onChangeText={(text) => props.onChangeText(text)} >
+      </TextInput>
     </View>
   )
 };
