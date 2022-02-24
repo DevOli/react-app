@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pressable, StyleSheet, Platform } from 'react-native'
+import { TouchableHighlight, StyleSheet, Platform } from 'react-native'
 import Label from '../atoms/labels/Label';
 
 type Props = {
@@ -22,9 +22,9 @@ export const Button = (props: Props) => {
   }
 
   return (
-    <Pressable style={[styles.container, { borderColor: color, width: width, height: height }]} onPress={onButtonPress}>
+    <TouchableHighlight style={[styles.container, { borderColor: color, width: width, height: height }]} onPress={onButtonPress}>
       <Label text={text} textStyle={[styles.label, { fontSize: fontSize, color: color }]} />
-    </Pressable>
+    </TouchableHighlight>
   )
 }
 
