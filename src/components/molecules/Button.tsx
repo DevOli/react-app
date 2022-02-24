@@ -3,26 +3,20 @@ import { TouchableHighlight, StyleSheet, Platform } from 'react-native'
 import Label from '../atoms/labels/Label';
 
 type Props = {
-  name: string,
-  result: string,
   text: string,
   width: number,
   height: number,
-  fontSize: number,
-  color: string,
-  //onPress: () => {}
+  fontSize?: number,
+  color?: string,
+  onPress?: () => void
 }
 
 export const Button = (props: Props) => {
 
-  const { name, result, text, width, height, fontSize, color } = props
-
-  function onButtonPress() {
-    console.warn(`Hi ${name}, you are ${result}.`);
-  }
+  const { text, width, height, fontSize, color, onPress } = props
 
   return (
-    <TouchableHighlight style={[styles.container, { borderColor: color, width: width, height: height }]} onPress={onButtonPress}>
+    <TouchableHighlight style={[styles.container, { borderColor: color, width: width, height: height }]} onPress={onPress}>
       <Label text={text.toUpperCase()} textStyle={[styles.label, { fontSize: fontSize, color: color }]} />
     </TouchableHighlight>
   )
