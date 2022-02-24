@@ -12,7 +12,7 @@ const Icon: FC<Props> = (props) => {
       <Ionicons
         name={props.icon}
         size={24}
-        color="#555" />
+        color={ props.icon=='md-alert-circle'? '#F00' : '#555'} />
     </View>
   )
 }
