@@ -8,7 +8,7 @@ type Props = {
 }
 
 export default function Label(props: Props) {
-    return <Text style={{...styles.simpleText, ...props.textStyle}}>{props.text}</Text>
+    return <Text style={[styles.simpleText, props.textStyle]}>{props.text}</Text>
 }
 
 const styles = StyleSheet.create({
