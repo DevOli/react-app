@@ -2,11 +2,11 @@ import { StyleSheet, Image, View } from 'react-native';
 import React, { FC } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 
-interface Props {
+type Props = {
   icon: keyof typeof Ionicons.glyphMap;
 }
 
-const Icon: FC<Props> = (props) => {
+const Icon = (props: Props) => {
   return (
     <View>
       <Ionicons
