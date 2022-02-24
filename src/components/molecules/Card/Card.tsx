@@ -1,13 +1,13 @@
 import { View, Image, StyleSheet, Text, Button, Alert, Platform } from 'react-native'
 import React from 'react'
-import Label from '../atoms/labels/Label'
-import ImageAtom from '../atoms/images/ImageAtom'
+import Label from '../../atoms/labels/Label'
+import ImageAtom from '../../atoms/images/ImageAtom'
 
 export default function Card(props: any) {
   return (
     <View style={styles.container}>
       <View style={styles.image}>
-        <ImageAtom image={require("../../../assets/react-logo.png")} />
+        <ImageAtom image={require("../../../../assets/react-logo.png")} />
       </View>
       <View style={styles.cardBody}>
         <View style={styles.title}>
