@@ -1,7 +1,8 @@
-import { View, Image, StyleSheet, Text, Button, Alert, Platform } from 'react-native'
+import { View, Image, StyleSheet, Text, Alert, Platform } from 'react-native'
 import React from 'react'
 import Label from '../../atoms/labels/Label'
 import ImageAtom from '../../atoms/images/ImageAtom'
+import {Button} from '../../molecules/Button'
 
 export default function Card(props: any) {
   return (
@@ -18,14 +19,8 @@ export default function Card(props: any) {
           <Label textStyle={{fontSize: 20, color: "black"}} text="Greyhound divisively hello coldly wonderfully marginally far upon excluding."/>
         </View>
         <View style={styles.buttons}>
-          <Button
-            title="Press me"
-            onPress={() => {}}
-          />
-          <Button
-            title="Press me"
-            onPress={() => {}}
-          />
+          <Button text='ACTION 1' width={100} height={40} />
+          <Button text='ACTION 2' width={100} height={40} />
         </View>
       </View>
     </View>
@@ -82,7 +77,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
     flexDirection: "row",
-    paddingVertical: 16,
-    paddingHorizontal: 20,
+    paddingVertical: 6,
+    paddingHorizontal: 10,
   },
 });

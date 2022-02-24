@@ -6,7 +6,6 @@ type ImageProps = {
 }
 
 export default function ImageAtom(props: ImageProps) {
-    console.log(props)
   return (
     <View>
       <Image source={props.image} style={styles.imageAtom}/>
