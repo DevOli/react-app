@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    borderWidth: 3,
+    borderWidth: 2,
     backgroundColor: '#F3F4F7',
     margin: 10,
     paddingStart: 16,
@@ -53,6 +53,6 @@ const styles = StyleSheet.create({
     })
   },
   label: {
-    fontWeight: 'bold'
+    fontWeight: '500'
   },
 });
