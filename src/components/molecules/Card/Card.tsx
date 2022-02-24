@@ -3,6 +3,9 @@ import React, {useState} from 'react'
 import Label from '../../atoms/labels/Label'
 import ImageAtom from '../../atoms/images/ImageAtom'
 import {Button} from '../../molecules/Button'
+import { RootSiblingParent } from 'react-native-root-siblings'
+import Toast from 'react-native-root-toast'
+
 
 export default function Card(props: any) {
 
@@ -21,9 +24,16 @@ export default function Card(props: any) {
           <Label textStyle={{fontSize: 16, color: "black", margin: 0}} text={description}/>
         </View>
         <View style={styles.buttons}>
-          {/* <Button text='More info' width={140} height={40} onPress={() => {ToastAndroid.show('#GoToNextPage', ToastAndroid.SHORT)}}/> */}
           <Button text='More info' width={140} height={40} onPress={() => {setDescription("React Native brings React's declarative UI framework to iOS and Android. With React Native, you use native UI controls and have full access to the native platform.")}}/>
-          <Button text='Add' width={80} height={40} onPress={() => {ToastAndroid.show('Course added!', ToastAndroid.SHORT)}}/>
+          <RootSiblingParent>
+            <Button text='Add' width={80} height={40} onPress={() => {
+              if(Platform.OS === 'ios'){
+                Toast.show("Course added!")
+              } else {
+                ToastAndroid.show('Course added!', ToastAndroid.SHORT)
+              }
+            }}/>
+          </RootSiblingParent>
         </View>
       </View>
     </View>
