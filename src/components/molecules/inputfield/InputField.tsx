@@ -21,6 +21,7 @@ type Props = {
 const InputField = (props: Props) => {
   const [type, setType] = useState(props.type)
   const [placeholder, setPlaceholder] = useState(props.label)
+  const [text, setText] = useState('');
   const styles = inputFieldStyles(type);
 
   const [counter, setCounter] = useState(0);
@@ -33,6 +34,7 @@ const InputField = (props: Props) => {
       length = props.limit;
     }
     setCounter(length);
+    setText(text);
   }
   const onFocus = () => {
     setPlaceholder("");
@@ -50,8 +52,24 @@ const InputField = (props: Props) => {
     else setType('empty');
   }
 
+  const accessibility = {
+    accessible: true,
+    accessibilityLabel: props.label,
+    accessibilityHint: props.helper,
+    accessibilityState: {
+      disabled: false,
+      selected: type==='focused',
+      checked: false,
+      busy: false,
+      expanded: false
+    },
+    accessibilityValue: {
+      text: text
+    }
+  }
+
   return (
-    <View style={{width: '80%', height: 88}}>
+    <View style={{width: '80%', height: 88}} {...accessibility} accessibilityRole='none' >
       {(type==='normal' || type==='focused' || (type==='error' && counter>0)) && <Text style={styles.label}>{props.label}</Text>}
 
       <View style={styles.container}>
