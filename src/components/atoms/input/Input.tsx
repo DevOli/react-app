@@ -31,6 +31,6 @@ export default Input;
 
 const styles = StyleSheet.create({
   input: {
-    outlineStyle: 'none'
+    //outlineStyle: 'none'
   }
 });

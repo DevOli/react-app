@@ -51,7 +51,7 @@ const InputField = (props: Props) => {
   }
 
   return (
-    <View>
+    <View style={{width: '80%'}}>
       {(type==='normal' || type==='focused' || (type==='error' && counter>0)) && <Text style={styles.label}>{props.label}</Text>}
 
       <View style={styles.container}>
@@ -102,7 +102,8 @@ const inputFieldStyles = (type: InputFieldType) => {
 
   return StyleSheet.create({
     container: {
-      height: 48,
+      //height: 48,
+      //width: '80%',
       borderWidth: 1,
       borderRadius: 4,
       borderColor: 'gray',

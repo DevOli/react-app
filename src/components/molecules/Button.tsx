@@ -16,8 +16,9 @@ export const Button = (props: Props) => {
   const { text, width, height, fontSize, color, onPress } = props
 
   return (
-    <TouchableHighlight style={[styles.container, { borderColor: color, width: width, height: height }]} onPress={onPress}>
-      <Label text={text.toUpperCase()} textStyle={[styles.label, { fontSize: fontSize, color: color }]} />
+    <TouchableHighlight style={[styles.container, { borderColor: color, width, height }]} 
+                        onPress={onPress}>
+      <Label text={text.toUpperCase()} textStyle={[styles.label, { fontSize, color }]} />
     </TouchableHighlight>
   )
 }
