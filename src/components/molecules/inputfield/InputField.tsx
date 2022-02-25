@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextStyle, TouchableOpacityBase, View, ViewStyle } from 'react-native'
 import React, { FC, useState } from 'react'
-import Icon from '../atoms/Icon'
-import Input from '../atoms/Input'
+import Icon from '../../atoms/icon/Icon'
+import Input from '../../atoms/input/Input'
 
 type InputFieldType = 'empty' | 'normal' | 'focused' | 'error';
 
