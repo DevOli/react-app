@@ -14,14 +14,30 @@ InputFieldStories.addDecorator((getStory) => <CenterView>{getStory()}</CenterVie
       showLeftIcon: boolean('Show Left icon', true),
       showRightIcon: boolean('Show Right icon', true),
       showHelper: boolean('Show Helper text', true),
-      showError: boolean('Show error message', false),
+      showError: false,
       showCounter: boolean('Show character count', true),
       label: text('Placeholder/Label', 'Phone Number'),
       helper: text('Helper Message', 'Input your cellphone number'),
+      error: 'Not a valid input',
+      limit: number('Character Count Limit', 10),
+    }
+    return (
+      <InputField {...props} type='empty' />
+    )
+  }))
+  .add('error', () => React.createElement(() => {
+    const props = {
+      showLeftIcon: boolean('Show Left icon', true),
+      showRightIcon: boolean('Show Right icon', true),
+      showHelper: false,
+      showError: true,
+      showCounter: boolean('Show character count', true),
+      label: text('Placeholder/Label', 'Phone Number'),
+      helper: 'Input your cellphone number',
       error: text('Error Message', 'Not a valid input'),
       limit: number('Character Count Limit', 10),
     }
     return (
-      <InputField {...props} type={text('Input Field Type', 'empty')} />
+      <InputField {...props} type='error' />
     )
   }));
