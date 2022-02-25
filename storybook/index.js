@@ -11,6 +11,7 @@ addDecorator(withKnobs);
 
 // import stories
 configure(() => {
+  require('../src/components/molecules/Button.stories');
   require('../src/components/atoms/checkboxs/Checkbox.stories');
   require('../src/components/atoms/labels/Label.stories');
   require('../src/components/molecules/LabeledCheckbox.stories');
