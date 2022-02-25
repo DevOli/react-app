@@ -12,6 +12,8 @@ addDecorator(withKnobs);
 // import stories
 configure(() => {
   require('../src/components/atoms/checkboxs/Checkbox.stories');
+  require('../src/components/atoms/labels/Label.stories');
+  require('../src/components/molecules/LabeledCheckbox.stories');
 }, module);
 
 // Refer to https://github.com/storybookjs/react-native/tree/master/app/react-native#getstorybookui-options
