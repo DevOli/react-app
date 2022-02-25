@@ -13,8 +13,10 @@ addDecorator(withKnobs);
 configure(() => {
   require('../src/components/molecules/Button.stories');
   require('../src/components/atoms/checkboxs/Checkbox.stories');
+  require('../src/components/molecules/Card/Card.stories')
   require('../src/components/atoms/labels/Label.stories');
   require('../src/components/molecules/LabeledCheckbox.stories');
+  require('../src/components/atoms/images/ImageAtom.stories');
   require('../src/components/atoms/icon/Icon.stories');
   require('../src/components/atoms/input/Input.stories');
   require('../src/components/molecules/inputfield/InputField.stories');
