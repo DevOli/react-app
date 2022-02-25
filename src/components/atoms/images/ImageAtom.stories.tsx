@@ -6,5 +6,5 @@ import ImageAtom from './ImageAtom';
 storiesOf('Image', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Image', () => (
-   <ImageAtom image={require("../../../../assets/react-logo.png")} imageStyle={{ width: 200 }}/>
+   <ImageAtom image={require("../../../../assets/react-logo.png")} imageStyle={{ width: 200 }} imageDescription="React image"/>
   ))
